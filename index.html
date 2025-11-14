@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>橋本研究室</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --navy: #132C57;
+            --orange: #E78B3A;
+            --blue: #7CC4DF;
+            --beige: #F7F2E9;
+        }
+
+        body {
+            background: var(--beige);
+            font-family: "Noto Sans JP", sans-serif;
+        }
+    </style>
+
+    <!-- 画像の動き -->
+    <style>
+        /* 上：背景を右へ動かす */
+        @keyframes scroll-right {
+            0% {
+                background-position-x: 0;
+            }
+
+            100% {
+                background-position-x: 1000px;
+            }
+        }
+
+        /* 下：背景を左へ動かす */
+        @keyframes scroll-left {
+            0% {
+                background-position-x: 0;
+            }
+
+            100% {
+                background-position-x: -1000px;
+            }
+        }
+
+        /* Tailwindでは custom class を挟んで適用する */
+        .bg-scroll-right {
+            animation: scroll-right 20s linear infinite;
+        }
+
+        .bg-scroll-left {
+            animation: scroll-left 20s linear infinite;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- ★ 完全透明ヘッダー ★ -->
+    <!-- ========================= -->
+    <header class="absolute top-0 left-0 w-full bg-transparent z-50">
+
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+
+            <!-- ロゴ画像 -->
+            <a href="index.html" class="flex items-center">
+                <img src="./img/logo.png" alt="橋本研究室ロゴ" class="h-16 w-auto">
+            </a>
+
+            <!-- PCメニュー -->
+            <nav class="hidden md:flex gap-8 text-[var(--navy)] font-semibold drop-shadow">
+                <a href="#news" class="hover:text-[var(--orange)] transition">ニュース</a>
+                <a href="./update/member/index.html" class="hover:text-[var(--orange)] transition">メンバー</a>
+                <a href="#hashimoto" class="hover:text-[var(--orange)] transition">教員紹介</a>
+                <a href="#access" class="hover:text-[var(--orange)] transition">アクセス</a>
+            </nav>
+
+            <!-- スマホメニューアイコン -->
+            <button id="menuBtn" class="md:hidden text-3xl text-[var(--navy)] drop-shadow">
+                ☰
+            </button>
+
+        </div>
+
+        <!-- ★ 黒い背景（overlay：クリックで閉じる） -->
+        <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 transition-opacity duration-300 z-40">
+        </div>
+
+        <!-- ★ スライドインメニュー（右側から出る） -->
+        <div id="mobileMenu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-xl transform translate-x-full
+              transition-transform duration-300 z-50 p-6">
+
+            <a href="#news" class="block px-2 py-3 border-b hover:text-[var(--orange)]">ニュース</a>
+            <a href="./update/member/index.html" class="block px-2 py-3 border-b hover:text-[var(--orange)]">メンバー</a>
+            <a href="#hashimoto" class="block px-2 py-3 border-b hover:text-[var(--orange)]">教員紹介</a>
+            <a href="#access" class="block px-2 py-3 hover:text-[var(--orange)]">アクセス</a>
+
+        </div>
+
+    </header>
+
+
+
+
+
+
+    <!-- =================================================== -->
+    <!-- ★ メインビジュアル：上下にイラストが来る構成 ★ -->
+    <!-- =================================================== -->
+
+    <!-- 上の背景イラスト -->
+    <section class="h-[180px] bg-repeat bg-[length:60%] bg-bottom opacity-90 bg-scroll-right"
+        style="background-image: url('./img/mainvisual.png');">
+    </section>
+
+
+    <!-- タイトル中央 -->
+    <section class="py-16 text-center bg-[var(--beige)]">
+
+        <!-- 縁取り＋グラデーション文字（見やすさ強化版） -->
+        <div class="relative inline-block">
+
+
+            <!-- 本体グラデーション文字 -->
+            <h1 class="relative text-5xl md:text-6xl font-black
+                 bg-gradient-to-r from-[#3A6FA5] via-[#285680] to-[#2F6BA1]
+                 bg-clip-text text-[--navy]
+                 drop-shadow-[0_0_22px_rgba(255,255,255,1)]
+                 drop-shadow-[0_0_32px_rgba(255,255,255,0.85)]">
+                Hashimoto Laboratory
+            </h1>
+        </div>
+
+        <p class="mt-4 text-[var(--navy)] text-xl">
+            東京理科大学 創域理工学部
+            <br class="inline md:hidden">
+            社会基盤工学科 材料科学研究室
+        </p>
+
+
+        <a href="#news" class="inline-block mt-8 px-10 py-4 bg-[var(--orange)] text-white text-lg rounded-lg shadow-lg
+         hover:bg-[#c06e2d] transition">
+            活動を見る
+        </a>
+
+    </section>
+
+    <!-- 下の背景イラスト -->
+    <section class="h-[180px] bg-repeat bg-[length:60%] bg-top opacity-90 bg-scroll-left"
+        style="background-image: url('./img/mainvisual.png');">
+    </section>
+
+
+
+    <!-- ========================= -->
+    <!-- ニュース -->
+    <!-- ========================= -->
+    <section id="news" class="max-w-5xl mx-auto px-6 mt-20 mb-24">
+
+        <!-- 見出し -->
+        <h2 class="text-4xl font-bold text-[var(--navy)] mb-8">ニュース</h2>
+
+        <!-- ★★ 年ごとのタブ（JSで自動生成される） ★★ -->
+        <div id="year-tabs" class="flex gap-3 mb-8"></div>
+
+        <!-- ★★ ニュース一覧（renderNews がここへ挿入する） ★★ -->
+        <div id="news-container"></div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- 先生紹介 -->
+    <!-- ========================= -->
+    <!-- <img src="./img/hashimoto.jpg"> -->
+    <section id="hashimoto" class="max-w-5xl mx-auto px-6 mt-24 mb-24">
+
+        <h2 class="text-4xl font-bold text-[var(--navy)] mb-10">
+            教員紹介
+        </h2>
+
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <img src="./img/hashimoto.jpg" alt="講師写真" style="width: 16rem;height:16rem;"
+                    class=" object-cover rounded-full shadow-md border-4 border-[var(--navy)]">
+
+
+
+
+
+                <!-- テキスト -->
+                <div class="flex-1">
+                    <h3 class="text-3xl font-bold text-[var(--navy)]">
+                        橋本 永手
+                    </h3>
+                    <p class="mt-2 text-lg text-gray-700">
+                        東京理科大学 創域理工学部 社会基盤工学科<br>
+                        講師
+                    </p>
+
+                    <h4 class="mt-4 text-xl font-semibold text-[var(--navy)]">専門分野</h4>
+                    <p class="text-gray-700 mt-1">
+                        土木材料・施工・建設マネジメント (腐食，防食，電気化学，インピーダンス)
+                    </p>
+
+
+
+                    <!-- 詳細リンク（任意）-->
+                    <a href="https://researchmap.jp/nagate" class="inline-block mt-8 px-10 py-4 bg-[var(--orange)] text-white text-lg rounded-lg shadow-lg
+          hover:bg-[#c06e2d] transition">
+                        詳しいプロフィールを見る
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================= -->
+    <!--      アクセス  -->
+    <!-- ========================= -->
+    <section id="access" class="max-w-5xl mx-auto px-6 mt-20 mb-24">
+
+        <h2 class="text-4xl font-bold text-[var(--navy)] mb-8">アクセス</h2>
+
+        <!-- 情報カード -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+
+            <h3 class="text-2xl font-bold text-[var(--navy)] mb-4">所在地</h3>
+            <p class="text-lg text-gray-800 leading-relaxed">
+                〒278-8510
+                千葉県野田市山崎2641
+                5号館 4階
+                材料科学研究室
+            </p>
+
+            <h3 class="text-2xl font-bold text-[var(--navy)] mt-8 mb-4">交通アクセス</h3>
+            <ul class="list-disc ml-6 text-lg text-gray-800 leading-relaxed">
+                <li>東武アーバンパークライン線「運河駅」徒歩 10 分</li>
+
+            </ul>
+
+            <!-- Google Map 埋め込み -->
+            <div class="mt-8">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6144.378688462126!2d139.90365365536377!3d35.91584364773966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018991a5e785f9b%3A0x4c95088879c29acf!2z5p2x5Lqs55CG56eR5aSn5a2mIOmHjueUsOOCreODo-ODs-ODkeOCuSA15Y-36aSo!5e0!3m2!1sja!2sjp!4v1763111846541!5m2!1sja!2sjp"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <footer class="text-center text-gray-700 py-6 bg-white border-t">
+        © 2025 Hashimoto Laboratory
+    </footer>
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const overlay = document.getElementById("overlay");
+
+        // メニューを開く
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-full");
+            overlay.classList.remove("hidden");
+            overlay.classList.add("opacity-100");
+        });
+
+        // メニューを閉じる（overlay クリック）
+        overlay.addEventListener("click", () => {
+            mobileMenu.classList.add("translate-x-full");
+            overlay.classList.add("hidden");
+        });
+    </script>
+
+
+    <script src="./update/newsIndex.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
