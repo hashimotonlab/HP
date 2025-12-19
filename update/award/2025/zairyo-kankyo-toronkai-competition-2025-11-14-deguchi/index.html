@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ニュース詳細｜橋本研究室</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --navy: #132C57;
+            --orange: #E78B3A;
+            --blue: #7CC4DF;
+            --beige: #F7F2E9;
+        }
+
+        body {
+            background: var(--beige);
+            font-family: "Noto Sans JP", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!--   ヘッダー（透明）       -->
+    <!-- ========================= -->
+    <header class="w-full bg-transparent z-50 fixed top-0 left-0">
+
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+
+            <!-- ロゴ -->
+            <a href="../../../../index.html" class="flex items-center">
+                <img src="../../../../img/logo.png" alt="橋本研究室ロゴ" class="h-16 w-auto">
+            </a>
+
+            <!-- PCメニュー -->
+            <nav class="hidden md:flex gap-8 text-[var(--navy)] font-semibold">
+                <a href="../../../../index.html#news" class="hover:text-[var(--orange)] transition">ニュース</a>
+                <a href="../../../member/index.html" class="hover:text-[var(--orange)] transition">メンバー</a>
+                <a href="../../../../index.html#hashimoto" class="hover:text-[var(--orange)] transition">教員紹介</a>
+                <a href="../../../../index.html#access" class="hover:text-[var(--orange)] transition">アクセス</a>
+            </nav>
+
+            <!-- スマホ用 メニューボタン -->
+            <button id="menuBtn" class="md:hidden text-3xl text-[var(--navy)] drop-shadow">
+                ☰
+            </button>
+        </div>
+
+        <!-- overlay（黒い半透明背景：クリックで閉じる） -->
+        <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 transition-opacity duration-300 z-40">
+        </div>
+
+        <!-- スライドイン メニュー（右側から出てくる） -->
+        <div id="mobileMenu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-xl transform translate-x-full
+                transition-transform duration-300 z-50 p-6">
+
+            <a href="../../../../index.html#news" class="block px-2 py-3 border-b hover:text-[var(--orange)]">
+                ニュース
+            </a>
+
+            <a href="../../../member/index.html" class="block px-2 py-3 border-b hover:text-[var(--orange)]">
+                メンバー
+            </a>
+
+            <a href="../../../../index.html#hashimoto" class="block px-2 py-3 border-b hover:text-[var(--orange)]">
+                教員紹介
+            </a>
+
+            <a href="../../../../index.html#access" class="block px-2 py-3 hover:text-[var(--orange)]">
+                アクセス
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ========================= -->
+    <!--          記事タイトル       -->
+    <!-- ========================= -->
+    <section class="max-w-4xl mx-auto px-6 pt-28 pb-12">
+
+        <p class="text-sm text-gray-600">2025/10/30</p>
+
+        <h1 class="text-3xl md:text-4xl font-bold text-[var(--navy)] leading-relaxed mt-2 mb-2 text-center">
+            出口青空が若手講演奨励賞を受賞しました！
+        </h1>
+
+        <!-- 写真 -->
+        <div class="w-full aspect-[21/9] r">
+            <img src="./img/deguchi.jpg" style="width:50%; margin:auto;">
+        </div>
+
+
+
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!--          記事本文          -->
+    <!-- ========================= -->
+    <section class="max-w-4xl mx-auto px-6 pb-24 text-gray-800 leading-8 text-lg">
+        <p> このたび、出口 青空（博士課程2年）が、腐食防食学会 第72回「材料と環境討論会コンペティション」において、若手講演奨励賞を受賞しました。 </p>
+        <p class="mt-4"> 研究テーマである「コンクリート中鉄筋の高調波応答特性の数値解析」が高く評価されたものです。 </p>
+        <p class="mt-4"> 今後も研究室一同、より一層の研究活動の推進に努めてまいります。 </p>
+
+        <!-- 戻るボタン -->
+        <a href="../../../../index.html#news" class="inline-block mt-10 px-6 py-3 bg-[var(--orange)] text-white rounded-lg shadow-lg
+                  hover:bg-[#c06e2d] transition ">
+            ニュース一覧に戻る
+        </a>
+    </section>
+
+
+    <footer class="text-center text-gray-700 py-6 bg-white border-t">
+        © 2025 Hashimoto Laboratory
+    </footer>
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const overlay = document.getElementById("overlay");
+
+        // 開く処理
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-full");
+            overlay.classList.remove("hidden");
+            overlay.classList.add("opacity-100");
+        });
+
+        // overlayをクリックで閉じる
+        overlay.addEventListener("click", () => {
+            mobileMenu.classList.add("translate-x-full");
+            overlay.classList.add("hidden");
+        });
+    </script>
+
+</body>
+
+</html>
