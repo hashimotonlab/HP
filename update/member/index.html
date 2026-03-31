@@ -32,55 +32,7 @@
         <!-- ====================== -->
         <!--     ヘッダー           -->
         <!-- ====================== -->
-        <header class="w-full bg-transparent z-50 fixed top-0 left-0">
-
-            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-
-                <!-- ロゴ -->
-                <a href="../../index.html" class="flex items-center">
-                    <img src="../../img/logo.png" alt="橋本研究室ロゴ" class="h-16 w-auto">
-                </a>
-
-                <!-- PCメニュー -->
-                <nav class="hidden md:flex gap-8 text-[var(--navy)] font-semibold">
-                    <a href="../../index.html#news" class="hover:text-[var(--orange)] transition">ニュース</a>
-                    <a href="./index.html" class="hover:text-[var(--orange)] transition">メンバー</a>
-                    <a href="../../index.html#hashimoto" class="hover:text-[var(--orange)] transition">教員紹介</a>
-                    <a href="../../index.html#access" class="hover:text-[var(--orange)] transition">アクセス</a>
-                </nav>
-
-                <!-- スマホ用 ☰ ボタン -->
-                <button id="menuBtn" class="md:hidden text-3xl text-[var(--navy)] drop-shadow">
-                    ☰
-                </button>
-            </div>
-
-            <!-- ★ overlay（黒い半透明背景） -->
-            <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 transition-opacity duration-300 z-40">
-            </div>
-
-            <!-- ★ スライドインメニュー -->
-            <div id="mobileMenu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-xl transform translate-x-full
-                transition-transform duration-300 z-50 p-6">
-
-                <a href="../../index.html#news" class="block px-2 py-3 border-b hover:text-[var(--orange)]">
-                    ニュース
-                </a>
-
-                <a href="./index.html" class="block px-2 py-3 border-b hover:text-[var(--orange)]">
-                    メンバー
-                </a>
-
-                <a href="../../index.html#hashimoto" class="block px-2 py-3 border-b hover:text-[var(--orange)]">
-                    教員紹介
-                </a>
-
-                <a href="../../index.html#access" class="block px-2 py-3 hover:text-[var(--orange)]">
-                    アクセス
-                </a>
-            </div>
-
-        </header>
+        <div id="site-header"></div>
 
 
 
@@ -107,27 +59,11 @@
         </footer>
 
     </div>
-    <!-- ▲▲ ページ全体を縦に伸ばす ▲▲ -->
-    <script>
-        const menuBtn = document.getElementById("menuBtn");
-        const mobileMenu = document.getElementById("mobileMenu");
-        const overlay = document.getElementById("overlay");
-
-        // 開く
-        menuBtn.addEventListener("click", () => {
-            mobileMenu.classList.remove("translate-x-full");
-            overlay.classList.remove("hidden");
-        });
-
-        // 閉じる（overlayクリック）
-        overlay.addEventListener("click", () => {
-            mobileMenu.classList.add("translate-x-full");
-            overlay.classList.add("hidden");
-        });
-    </script>
+    
 
     <script src="../newsIndex.js"></script>
     <script src="../../js/member.js"></script>
+    <script src="/js/layout.js"></script>
 </body>
 
 </html>

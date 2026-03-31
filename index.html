@@ -56,43 +56,43 @@
             animation: scroll-left 20s linear infinite;
         }
     </style>
-<meta name="google-site-verification" content="sWVPqGOoCjiMmnh2ic66U1corsvizFJHKMaQtIm7M5w" />
+    <meta name="google-site-verification" content="sWVPqGOoCjiMmnh2ic66U1corsvizFJHKMaQtIm7M5w" />
 </head>
 
 <body>
-
+    <div id="site-header"></div>
     <!-- ========================= -->
     <!-- ★ 完全透明ヘッダー ★ -->
     <!-- ========================= -->
-    <header class="absolute top-0 left-0 w-full bg-transparent z-50">
+    <!-- <header class="absolute top-0 left-0 w-full bg-transparent z-50">
 
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
-            <!-- ロゴ画像 -->
+           
             <a href="index.html" class="flex items-center">
                 <img src="./img/logo.png" alt="橋本研究室ロゴ" class="h-16 w-auto">
             </a>
 
-            <!-- PCメニュー -->
+            
             <nav class="hidden md:flex gap-8 text-[var(--navy)] font-semibold drop-shadow">
                 <a href="#news" class="hover:text-[var(--orange)] transition">ニュース</a>
                 <a href="./update/member/index.html" class="hover:text-[var(--orange)] transition">メンバー</a>
                 <a href="#hashimoto" class="hover:text-[var(--orange)] transition">教員紹介</a>
                 <a href="#access" class="hover:text-[var(--orange)] transition">アクセス</a>
+
             </nav>
 
-            <!-- スマホメニューアイコン -->
+            
             <button id="menuBtn" class="md:hidden text-3xl text-[var(--navy)] drop-shadow">
                 ☰
             </button>
 
         </div>
 
-        <!-- ★ 黒い背景（overlay：クリックで閉じる） -->
         <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 transition-opacity duration-300 z-40">
         </div>
 
-        <!-- ★ スライドインメニュー（右側から出る） -->
+       
         <div id="mobileMenu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-xl transform translate-x-full
               transition-transform duration-300 z-50 p-6">
 
@@ -103,7 +103,7 @@
 
         </div>
 
-    </header>
+    </header> -->
 
 
 
@@ -113,47 +113,44 @@
     <!-- =================================================== -->
     <!-- ★ メインビジュアル：上下にイラストが来る構成 ★ -->
     <!-- =================================================== -->
+    <!-- メインビジュアル全体 -->
+    <section class="min-h-screen flex flex-col justify-center">
 
-    <!-- 上の背景イラスト -->
-    <section class="h-[180px] bg-repeat bg-[length:60%] bg-bottom opacity-90 bg-scroll-right"
-        style="background-image: url('./img/mainvisual.png');">
-    </section>
+        <!-- 上の背景イラスト -->
+        <div class="h-[20vh] min-h-[140px] bg-repeat bg-[length:60%] bg-bottom opacity-90 bg-scroll-right"
+            style="background-image: url('./img/mainvisual.png');">
+        </div>
 
+        <!-- タイトル中央 -->
+        <div class="flex-1 py-16 text-center bg-[var(--beige)] flex flex-col justify-center items-center px-6">
 
-    <!-- タイトル中央 -->
-    <section class="py-16 text-center bg-[var(--beige)]">
-
-        <!-- 縁取り＋グラデーション文字（見やすさ強化版） -->
-        <div class="relative inline-block">
-
-
-            <!-- 本体グラデーション文字 -->
-            <h1 class="relative text-5xl md:text-6xl font-black
+            <div class="relative inline-block">
+                <h1 class="relative text-5xl md:text-6xl font-black
                  bg-gradient-to-r from-[#3A6FA5] via-[#285680] to-[#2F6BA1]
                  bg-clip-text text-[--navy]
                  drop-shadow-[0_0_22px_rgba(255,255,255,1)]
                  drop-shadow-[0_0_32px_rgba(255,255,255,0.85)]">
-                Hashimoto Laboratory
-            </h1>
+                    Hashimoto Laboratory
+                </h1>
+            </div>
+
+            <p class="mt-4 text-[var(--navy)] text-xl">
+                東京理科大学 創域理工学部
+                <br class="inline md:hidden">
+                社会基盤工学科 材料科学研究室
+            </p>
+
+            <a href="#news" class="inline-block mt-8 px-10 py-4 bg-[var(--orange)] text-white text-lg rounded-lg shadow-lg
+         hover:bg-[#c06e2d] transition">
+                活動を見る
+            </a>
         </div>
 
-        <p class="mt-4 text-[var(--navy)] text-xl">
-            東京理科大学 創域理工学部
-            <br class="inline md:hidden">
-            社会基盤工学科 材料科学研究室
-        </p>
+        <!-- 下の背景イラスト -->
+        <div class="h-[20vh] min-h-[140px] bg-repeat bg-[length:60%] bg-top opacity-90 bg-scroll-left"
+            style="background-image: url('./img/mainvisual.png');">
+        </div>
 
-
-        <a href="#news" class="inline-block mt-8 px-10 py-4 bg-[var(--orange)] text-white text-lg rounded-lg shadow-lg
-         hover:bg-[#c06e2d] transition">
-            活動を見る
-        </a>
-
-    </section>
-
-    <!-- 下の背景イラスト -->
-    <section class="h-[180px] bg-repeat bg-[length:60%] bg-top opacity-90 bg-scroll-left"
-        style="background-image: url('./img/mainvisual.png');">
     </section>
 
 
@@ -199,9 +196,13 @@
                         橋本 永手
                     </h3>
                     <p class="mt-2 text-lg text-gray-700">
-                        東京理科大学 創域理工学部 社会基盤工学科<br>
-                        講師
+                        東京理科大学 創域理工学部 <br>
+                        社会基盤工学科 講師
                     </p>
+                    <a href="https://www.tus.ac.jp/academics/faculty/sciencetechnology/civil_engineering/" class="inline-block mt-8 px-10 py-4 bg-[var(--orange)] text-white text-lg rounded-lg shadow-lg
+          hover:bg-[#c06e2d] transition">創域理工学部 社会基盤工学科
+
+                    </a>
 
                     <h4 class="mt-4 text-xl font-semibold text-[var(--navy)]">専門分野</h4>
                     <p class="text-gray-700 mt-1">
@@ -266,28 +267,11 @@
     <footer class="text-center text-gray-700 py-6 bg-white border-t">
         © 2025 Hashimoto Laboratory
     </footer>
-    <script>
-        const menuBtn = document.getElementById("menuBtn");
-        const mobileMenu = document.getElementById("mobileMenu");
-        const overlay = document.getElementById("overlay");
-
-        // メニューを開く
-        menuBtn.addEventListener("click", () => {
-            mobileMenu.classList.remove("translate-x-full");
-            overlay.classList.remove("hidden");
-            overlay.classList.add("opacity-100");
-        });
-
-        // メニューを閉じる（overlay クリック）
-        overlay.addEventListener("click", () => {
-            mobileMenu.classList.add("translate-x-full");
-            overlay.classList.add("hidden");
-        });
-    </script>
 
 
     <script src="./update/newsIndex.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/layout.js"></script>
 </body>
 
 
