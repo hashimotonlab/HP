@@ -8,7 +8,7 @@ async function loadHTML(id, file) {
 }
 
 async function initLayout() {
-    await loadHTML("site-header", "/parts/header.html");
+    await loadHTML("site-header", "/HP/parts/header.html");
     // await loadHTML("site-footer", "/parts/footer.html");
 
     const menuBtn = document.getElementById("menuBtn");
