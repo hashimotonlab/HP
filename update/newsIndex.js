@@ -4,7 +4,7 @@ const newsList = [
     date: "2026/04/30",
     title: "春のオープンキャンパスの写真追加しました",
     content: "",
-    url: "./update/event/2026/", // ← ある場合だけリンク
+    url: "./update/event/202620260419spring_oc/", // ← ある場合だけリンク
   }
   ,
   {
