@@ -10,7 +10,7 @@ async function loadHTML(id, file) {
 async function initLayout() {
     // テスト時
     await loadHTML("site-header", "/HP/parts/header.html");
-    //  await loadHTML("site-header", "/parts/header.html");
+    //await loadHTML("site-header", "/parts/header.html");
 
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");

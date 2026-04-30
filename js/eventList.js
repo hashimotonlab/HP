@@ -88,7 +88,7 @@ function renderNews(year) {
     dateP.textContent = news.date;
 
     const titleH3 = document.createElement("h3");
-    titleH3.className = "text-2xl text-[var(--navy)] mt-2";
+    titleH3.className = "text-xl text-[var(--navy)] font-bold";
     titleH3.textContent = news.title;
 
     const contentP = document.createElement("p");
