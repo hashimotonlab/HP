@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イベント｜橋本研究室</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --navy: #132C57;
+            --orange: #E78B3A;
+            --blue: #7CC4DF;
+            --beige: #F7F2E9;
+        }
+
+        body {
+            background: var(--beige);
+            font-family: "Noto Sans JP", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!--   ヘッダー（透明）       -->
+    <!-- ========================= -->
+    <div id="site-header"></div>
+
+
+
+    <!-- ========================= -->
+    <!--          記事タイトル       -->
+    <!-- ========================= -->
+    <section class="max-w-4xl mx-auto px-6 pt-28 pb-12">
+
+        <h1 class="text-3xl md:text-4xl font-bold text-[var(--navy)] leading-relaxed mt-2 mb-2 text-center">
+            春のオープンキャンパス
+        </h1>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!--          記事本文          -->
+    <!-- ========================= -->
+    <section class="max-w-7xl mx-auto px-6 pb-24 text-gray-800 leading-8 text-lg">
+        <p class="mb-10 text-center"> 2026年4月19日に春のオープンキャンパスが開催されました。たくさんの方々にご訪問いただき誠にありがとうございました。
+            <br>橋本研究室では、いろいろな研究テーマの中の1つにある、温泉濃縮に関する研究テーマをもとに足湯を実施しました。<br>
+            みんなが協力して呼び込みを行う様子に元気をもらいました★<br>
+            お疲れ様でした！
+
+        </p>
+        <div id="260419spring_oc_photo" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        </div>
+        <!-- 写真 -->
+        <!-- <div class="w-full aspect-[21/9] r">
+            <img src="./img/member2025.jpeg" style="width:100%; margin:auto;">
+        </div> -->
+        <!-- 戻るボタン -->
+        <a href="../index.html" class="inline-block mt-10 px-6 py-3 bg-[var(--orange)] text-white rounded-lg shadow-lg
+                  hover:bg-[#c06e2d] transition ">
+            メンバー一覧に戻る
+        </a>
+    </section>
+    <!-- モーダル -->
+    <div id="modal" class="fixed inset-0 bg-black/80 flex items-center justify-center hidden z-50">
+
+        <img id="modalImg" class="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl">
+
+    </div>
+
+    <script>
+        const springOc = document.getElementById("260419spring_oc_photo")
+        const modal = document.getElementById("modal")
+        const modalImg = document.getElementById("modalImg")
+
+        // クリックで閉じる
+        modal.addEventListener("click", () => {
+            modal.classList.add("hidden")
+        })
+
+        for (let i = 1; i < 22; i++) {
+            const div = document.createElement("div")
+            const img = document.createElement("img")
+
+            const num = String(i).padStart(3, "0");
+
+            img.className = `w-full h-auto sm:h-48 md:h-52 object-contain sm:object-cover rounded-xl shadow-md hover:scale-105 transition cursor-pointer`;
+
+            // 👇 サムネ（軽い）
+            img.src = `./img/thumb/img${num}.jpg`
+
+            // 👇 元画像
+            img.dataset.full = `./img/img${num}.jpg`
+
+            // 👇 クリックイベント
+            img.addEventListener("click", () => {
+                if (window.matchMedia("(max-width: 640px)").matches) {
+                    return
+                }
+                modal.classList.remove("hidden")
+
+                modalImg.src = img.dataset.full
+                modalImg.style.width = "50%"
+                modalImg.style.height = "auto"
+                modalImg.style.maxHeight = "90vh"
+                modalImg.style.objectFit = "contain"
+            })
+
+            div.appendChild(img)
+            springOc.appendChild(div)
+        }
+
+
+
+    </script>
+
+
+
+
+    <footer class="text-center text-gray-700 py-6 bg-white border-t">
+        © 2025 Hashimoto Laboratory
+    </footer>
+    <script src="../../../../js/layout.js"></script>
+
+</body>
+
+</html>

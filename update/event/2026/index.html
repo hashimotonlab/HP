@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>橋本研究室</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --navy: #132C57;
+            --orange: #E78B3A;
+            --blue: #7CC4DF;
+            --beige: #F7F2E9;
+        }
+
+        body {
+            background: var(--beige);
+            font-family: "Noto Sans JP", sans-serif;
+        }
+    </style>
+</head>
+<!-- min-h-screen flexここで伊達の長さ引き延ばしてる -->
+<body class="min-h-screen flex flex-col">
+
+    <!-- ========================= -->
+    <!--   ヘッダー（透明）       -->
+    <!-- ========================= -->
+    <div id="site-header"></div>
+
+<!-- flexgrowと -->
+    <main class="flex-grow">
+        <!-- タイトル -->
+        <section class="max-w-4xl mx-auto px-6 pt-28 pb-12">
+        </section>
+
+        <!-- 本文 -->
+        <section class="max-w-4xl mx-auto px-6 pb-24 text-gray-800 leading-8 text-lg">
+
+
+            <!-- 戻るボタン -->
+            <a href="../../../../index.html" class="inline-block mt-10 px-6 py-3 bg-[var(--orange)] text-white rounded-lg shadow-lg
+                  hover:bg-[#c06e2d] transition ">
+                topに戻る
+            </a>
+        </section>
+    </main>
+
+
+
+    <footer class="text-center text-gray-700 py-6 bg-white border-t">
+        © 2025 Hashimoto Laboratory
+    </footer>
+
+    <script src="../../../js/layout.js"></script>
+    <!-- <script src="/js/layout.js"></script> -->
+
+</body>
+
+</html>

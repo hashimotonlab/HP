@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歴代メンバー一覧｜橋本研究室</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --navy: #132C57;
+            --orange: #E78B3A;
+            --blue: #7CC4DF;
+            --beige: #F7F2E9;
+        }
+
+        body {
+            background: var(--beige);
+            font-family: "Noto Sans JP", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ▼▼ ページ全体を縦に伸ばす ▼▼ -->
+    <div class="min-h-screen flex flex-col">
+
+        <!-- ====================== -->
+        <!--     ヘッダー           -->
+        <!-- ====================== -->
+        <div id="site-header"></div>
+
+        <main class="flex-grow">
+
+            <!-- ========================= -->
+            <!-- イベント一覧 -->
+            <!-- ========================= -->
+            <section id="events" class="max-w-5xl mx-auto px-6 mt-20 mb-24">
+
+                <!-- 見出し -->
+                <h2 class="text-4xl font-bold text-[var(--navy)] mb-8">イベント一覧</h2>
+
+                <!-- ★★ 年ごとのタブ（JSで自動生成される） ★★ -->
+                <div id="eventsyear-tabs" class="flex gap-3 mb-8"></div>
+
+                <!-- ★★ イベント一覧（renderNews がここへ挿入する） ★★ -->
+                <div id="events-container"></div>
+
+            </section>
+        </main>
+    </div>
+
+
+
+    <!-- ====================== -->
+    <!--       フッター          -->
+    <!-- ====================== -->
+    <footer class="text-center text-gray-700 py-6 bg-white border-t">
+        © 2025 Hashimoto Laboratory
+    </footer>
+
+    </div>
+
+
+    <script src="../newsIndex.js"></script>
+    <script src="../../js/eventList.js"></script>
+    <script src="../../js/layout.js"></script>
+</body>
+
+</html>
