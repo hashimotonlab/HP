@@ -43,7 +43,7 @@ const membersList = [
 // イベント写真追加したときに更新(event.html視点)
 const eventList=[
     {
-    date: "2026/04/29",
+    date: "2026/04/30",
     title: "春のオープンキャンパス",
     content: "2026/04/19に開催した春のオープンキャンパスの写真を追加しました。",
     url: "./2026/20260419spring_oc/"
