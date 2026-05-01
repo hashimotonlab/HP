@@ -7,11 +7,25 @@ async function loadHTML(id, file) {
     target.innerHTML = html;
 }
 
+// favicon設定
+function setFavicon(){
+let link=document.querySelector("link[rel='icon']")
+if(!link){
+    link=document.createElement("link")
+    link.rel="icon"
+    document.head.appendChild(link)
+}
+link.href="/HP/favicon.png"
+link.type="image/png"
+
+}
+
+// headerとfaviconセット
 async function initLayout() {
     // テスト時
     await loadHTML("site-header", "/HP/parts/header.html");
     //await loadHTML("site-header", "/parts/header.html");
-
+    setFavicon()
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
     const overlay = document.getElementById("overlay");
@@ -31,3 +45,5 @@ async function initLayout() {
 }
 
 initLayout();
+
+
