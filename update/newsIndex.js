@@ -1,6 +1,12 @@
 // ニュース追加時更新
 const newsList = [
-    {
+  {
+    date: "2026/07/08",
+    title: "研究手法ブログはじめました。",
+    content: "",
+    url: "./update/research/", // ← ある場合だけリンク
+  },
+  {
     date: "2026/06/17",
     title: "出口青空が、吉田研究奨励賞を受賞しました。",
     content: "",
@@ -48,13 +54,13 @@ const membersList = [
 ];
 
 // イベント写真追加したときに更新(event.html視点)
-const eventList=[
-    {
+const eventList = [
+  {
     date: "2026/04/30",
     title: "春のオープンキャンパス",
     content: "2026/04/19に開催した春のオープンキャンパスの写真を追加しました。",
     url: "./2026/20260419spring_oc/"
-    }
+  }
 
 ]
 
