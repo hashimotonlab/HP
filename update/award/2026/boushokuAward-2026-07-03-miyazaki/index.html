@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ニュース詳細｜橋本研究室</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --navy: #132C57;
+            --orange: #E78B3A;
+            --blue: #7CC4DF;
+            --beige: #F7F2E9;
+        }
+
+        body {
+            background: var(--beige);
+            font-family: "Noto Sans JP", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <div id="site-header"></div>
+
+
+    <main class="flex-1">
+        <section class="max-w-4xl mx-auto px-6 pt-28 pb-12">
+
+            <p class="text-sm text-gray-600">2026/07/03</p>
+
+            <h1 class="text-3xl md:text-4xl font-bold text-[var(--navy)] leading-relaxed mt-2 mb-2 text-center">
+                宮崎莉緒が、若手技術者優秀発表賞を受賞しました。
+            </h1>
+            <!-- 写真 -->
+            <div class="w-full aspect-[21/9] r">
+                <img src="./img/miyazaki.jpg" style="width:50%; margin:auto;">
+            </div>
+
+        </section>
+
+
+        <section class="max-w-4xl mx-auto px-6 pb-24 text-gray-800 leading-8 text-lg">
+            <p>このたび、宮崎 莉緒（学部4年）が、防錆防食技術発表大会にて2026年7月3日に若手技術者優秀発表賞を受賞しました。</p>
+            <p class="mt-4">研究テーマである「セメントペーストを電解液とした銀・酸化銀電極に対する各種電気化学測定」が高く評価されたものです。</p>
+            <p class="mt-4">今後も研究室一同、より一層の研究活動の推進に努めてまいります。</p>
+
+            <a href="../../../../index.html#news"
+                class="inline-block mt-10 px-6 py-3 bg-[var(--orange)] text-white rounded-lg shadow-lg hover:bg-[#c06e2d] transition">
+                ニュース一覧に戻る
+            </a>
+        </section>
+    </main>
+
+    <footer class="text-center text-gray-700 py-6 bg-white border-t">
+        © 2025 Hashimoto Laboratory
+    </footer>
+
+    <script src="../../../../js/layout.js"></script>
+</body>
+
+</html>

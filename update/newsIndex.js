@@ -1,5 +1,11 @@
 // ニュース追加時更新
 const newsList = [
+    {
+    date: "2026/07/15",
+    title: "宮崎莉緒が、若手技術者優秀発表賞を受賞しました。",
+    content: "",
+    url: "./update/award/2026/boushokuAward-2026-07-03-miyazaki"  // ← ある場合だけリンク
+  },
   {
     date: "2026/07/08",
     title: "研究手法ブログはじめました。",
