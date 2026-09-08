@@ -1,6 +1,12 @@
 // ニュース追加時更新
 const newsList = [
-    {
+  {
+    date: "2026/09/08",
+    title: "出口青空が、年次論文奨励賞を受賞しました。",
+    content: "",
+    url: "./update/award/2026/jci-nenzironbunAward-2026-09-08-deguchi"  // ← ある場合だけリンク
+  },
+  {
     date: "2026/07/15",
     title: "宮崎莉緒が、若手技術者優秀発表賞を受賞しました。",
     content: "",
