@@ -1,7 +1,7 @@
 // ニュース追加時更新
 const newsList = [
     {
-    date: "2026/10/30",
+    date: "2026/11/03",
     title: "銀山温泉への出張の写真追加しました。",
     content: "",
     url: "./update/event/2026/20261012ginzan/"  // ← ある場合だけリンク
@@ -80,7 +80,7 @@ const membersList = [
 // イベント写真追加したときに更新(event.html視点)
 const eventList = [
     {
-    date: "2026/10/30",
+    date: "2026/11/03",
     title: "銀山温泉への出張",
     content: "2026年10月10日～16日に銀山温泉へ出張した際の写真を追加しました。",
     url: "./2026/20261012ginzan/"  // ← ある場合だけリンク
